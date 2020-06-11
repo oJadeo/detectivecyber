@@ -1,0 +1,34 @@
+[gd_scene format=2]
+
+[node name="MailApp" type="VBoxContainer"]
+rect_min_size = Vector2( 1024, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+alignment = 2
+
+[node name="Exit" type="PanelContainer" parent="Control"]
+margin_left = 920.0
+margin_right = 970.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Minimize" type="PanelContainer" parent="Control"]
+margin_left = 974.0
+margin_right = 1024.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="MailAppUse" type="HBoxContainer" parent="."]
+margin_top = 44.0
+margin_right = 1024.0
+margin_bottom = 604.0
+rect_min_size = Vector2( 0, 560 )
+
+[node name="Tab" type="VBoxContainer" parent="MailAppUse"]
+margin_bottom = 560.0

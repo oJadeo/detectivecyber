@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MailBox.gd" type="Script" id=1]
+
+[node name="MailBox" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 600, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 600.0
+margin_bottom = 14.0
+
+[node name="Sender" type="Label" parent="."]
+margin_top = 18.0
+margin_right = 600.0
+margin_bottom = 32.0
+
+[node name="Context" type="Label" parent="."]
+margin_top = 36.0
+margin_right = 600.0
+margin_bottom = 50.0
+
+[node name="FileAttach" type="HBoxContainer" parent="."]
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 54.0
