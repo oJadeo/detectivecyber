@@ -1,34 +1,165 @@
-[gd_scene format=2]
+[gd_scene load_steps=16 format=2]
 
-[node name="MailApp" type="VBoxContainer"]
+[ext_resource path="res://res/font/THSarabunNew Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://res/font/THSarabunNewBoldSettings.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/mail/Minimize.gd" type="Script" id=3]
+[ext_resource path="res://src/mail/Exit.gd" type="Script" id=4]
+[ext_resource path="res://src/mail/MailApp.gd" type="Script" id=5]
+[ext_resource path="res://res/bg/mountain_bg.jpg" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.388235, 0.388235, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0.658824, 1, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+outline_color = Color( 0.513726, 0.513726, 0.513726, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0.811765, 1, 1 )
+
+[node name="MailApp" type="PanelContainer"]
+margin_right = 1024.0
+margin_bottom = 606.0
 rect_min_size = Vector2( 1024, 0 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="HBoxContainer" parent="."]
-margin_right = 1024.0
+[node name="MailAppContainer" type="VBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1022.0
+margin_bottom = 604.0
+custom_constants/separation = 0
+
+[node name="Control" type="PanelContainer" parent="MailAppContainer"]
+margin_right = 1020.0
+margin_bottom = 42.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="ControlContainer" type="HBoxContainer" parent="MailAppContainer/Control"]
+margin_right = 1020.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
+custom_constants/separation = 0
 alignment = 2
 
-[node name="Exit" type="PanelContainer" parent="Control"]
+[node name="Minimize" type="PanelContainer" parent="MailAppContainer/Control/ControlContainer"]
 margin_left = 920.0
 margin_right = 970.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 3 )
 
-[node name="Minimize" type="PanelContainer" parent="Control"]
-margin_left = 974.0
-margin_right = 1024.0
+[node name="Label" type="Label" parent="MailAppContainer/Control/ControlContainer/Minimize"]
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "_"
+align = 1
+valign = 1
+
+[node name="Exit" type="PanelContainer" parent="MailAppContainer/Control/ControlContainer"]
+margin_left = 970.0
+margin_right = 1020.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 4 )
 
-[node name="MailAppUse" type="HBoxContainer" parent="."]
-margin_top = 44.0
-margin_right = 1024.0
-margin_bottom = 604.0
+[node name="Label" type="Label" parent="MailAppContainer/Control/ControlContainer/Exit"]
+margin_top = 3.0
+margin_right = 50.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "X"
+align = 1
+valign = 1
+
+[node name="MailAppUse" type="PanelContainer" parent="MailAppContainer"]
+margin_top = 42.0
+margin_right = 1020.0
+margin_bottom = 602.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="MailAppUseContainer" type="HSplitContainer" parent="MailAppContainer/MailAppUse"]
+margin_right = 1020.0
+margin_bottom = 560.0
 rect_min_size = Vector2( 0, 560 )
 
-[node name="Tab" type="VBoxContainer" parent="MailAppUse"]
+[node name="Tab" type="PanelContainer" parent="MailAppContainer/MailAppUse/MailAppUseContainer"]
+margin_right = 200.0
 margin_bottom = 560.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="TabContainer" type="VBoxContainer" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab"]
+margin_right = 200.0
+margin_bottom = 560.0
+rect_min_size = Vector2( 200, 0 )
+custom_constants/separation = 0
+
+[node name="InboxLabel" type="Label" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
+margin_right = 200.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Inbox"
+align = 1
+valign = 1
+
+[node name="OuboxLabel" type="Label" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
+margin_top = 70.0
+margin_right = 200.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 70 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
+text = "Outbox"
+align = 1
+valign = 1
+
+[node name="BackgroundMail" type="TextureRect" parent="MailAppContainer/MailAppUse/MailAppUseContainer"]
+margin_left = 212.0
+margin_right = 1020.0
+margin_bottom = 560.0
+rect_min_size = Vector2( 600, 0 )
+texture = ExtResource( 6 )
+expand = true
