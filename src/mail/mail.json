@@ -1,0 +1,7 @@
+{
+  "Test": {
+    "header": "Test",
+    "sender": "tester@gmail.com",
+    "context": "This is testing mail."
+  }
+}
