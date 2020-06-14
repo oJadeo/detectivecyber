@@ -24,3 +24,8 @@ margin_bottom = 18.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Choose" type="VBoxContainer" parent="."]
+margin_top = 22.0
+margin_right = 1024.0
+margin_bottom = 22.0
