@@ -1,0 +1,21 @@
+{
+  "Zachery Igo": {
+    "autopsyNum": "A.20713/45",
+    "hospitalName": "Rennberg Central Hospital",
+    "autopsyName": "Zachery Igo",
+    "policeStationName": "Rennberg City Police Department",
+    "date": "09/03/2038",
+    "time": "3.45",
+    "observe": [
+      "Irregular contraction of the iris",
+      "Pale skin"
+    ],
+    "labTest": [
+      "Opioid is found in the body"
+    ],
+    "opinion": [
+      "Suffocated to death",
+      "Suspected of overdose Opioids"
+    ]
+  }
+}
