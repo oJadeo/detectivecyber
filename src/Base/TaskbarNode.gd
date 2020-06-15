@@ -28,7 +28,12 @@ func _process(delta):
 		normal_color = "#cecece"
 	else:
 		normal_color = "#ffffff"
-	pass
+	
+	
+	if app.get_parent() == null:
+		self.hide()
+		self.get_parent().remove_child(self)
+		pass
 
 func _input(event):
 	if mouseOver:
