@@ -19,12 +19,15 @@ __meta__ = {
 [node name="work" type="Panel" parent="."]
 margin_right = 874.0
 margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Drag&Drop" type="Panel" parent="."]
-margin_left = 874.0
-margin_top = 1.0
+margin_left = 760.0
+margin_top = 239.0
 margin_right = 1024.0
-margin_bottom = 601.0
+margin_bottom = 559.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
