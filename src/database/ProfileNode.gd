@@ -1,16 +1,16 @@
 extends PanelContainer
 class_name ProfileNode
 
-var profile: Profile = Profile.new("Zachery Igo", "Male", "50", "183", "Owner", "40", "None", "823-125-0346")
+var profile: Profile = Profile.new("Zachery Igo", "Male", "50", "183", "Hangout Bar&Restuarant's Owner", "40", "None", "823-125-0346")
 
-#func _init(var profile: Profile):
-	#self.profile = profile
+func _init(var profile: Profile):
+	self.profile = profile
 
 func _ready():
-	$ProfileContainer/Head/Data/Name.text = "Name: " + profile.name
-	$ProfileContainer/Head/Data/Age.text = "Age: " + profile.age
-	$ProfileContainer/Head/Data/Weight.text = "Weight: " + profile.weight
-	$ProfileContainer/Head/Data/Height.text = "Height: " + profile.height
+	$ProfileContainer/Title.text = profile.name
+	$ProfileContainer/Head/Data/Age.text = "Age: " + profile.age + " years"
+	$ProfileContainer/Head/Data/Weight.text = "Weight: " + profile.weight + "kg."
+	$ProfileContainer/Head/Data/Height.text = "Height: " + profile.height + "cm."
 	$ProfileContainer/Head/Data/Occupation.text = "Occupation: " + profile.occupation
 	$ProfileContainer/Head/Data/Gender.text = "Gender: " + profile.gender
 	$ProfileContainer/Head/Data/Telephone.text = "Tel." + profile.tel_num

@@ -1,8 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://res/font/THSarabunNew Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://res/font/TheanoDidotRegular-R3pA.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 25
+size = 20
 use_filter = true
 font_data = ExtResource( 1 )

@@ -1,7 +1,6 @@
 extends PanelContainer
-class_name MailApp
 
-
+var app
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,7 +8,6 @@ class_name MailApp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MailAppContainer/AppControl.app = self
 	pass # Replace with function body.
 
 
