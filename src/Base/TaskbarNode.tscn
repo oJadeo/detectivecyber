@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://res/pic/non-profile.png" type="Texture" id=1]
+[ext_resource path="res://res/font/THSarabunNew Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Base/TaskbarNode.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="TaskbarNode" type="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskIcon" type="TextureRect" parent="Container"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="TaskLabel" type="Label" parent="Container"]
+margin_left = 44.0
+margin_top = 6.0
+margin_right = 72.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Task"
+align = 1
+valign = 1

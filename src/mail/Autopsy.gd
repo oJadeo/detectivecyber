@@ -28,23 +28,12 @@ func setup(autopsyNum, hospitalName, autopsyName, policeStationName, date, time)
 	self.date = date
 	self.time = time
 	autopsyProfile = Profile.new(autopsyName, "", "", "", "", "", "", "")
-	$Num.text = "No. " + autopsyNum
-	$Hospital.text = "Send to: " + hospitalName
-	$Name.text = "Name: " + autopsyProfile.name
-	$PoliceStation.text = "From: " + policeStationName
-	$DateTime.text = "Date: " + date + "   Time: " + time
+	$Hospital.text = "From: " + hospitalName
+	$Name.text = "No. " + autopsyNum + "       Name: " + autopsyProfile.name
+	$PoliceStation.text = "Send to: " + policeStationName
+	$DateTime.text = "Date: " + date + "     Time: " + time
 
 func _ready() -> void:
-	
-	$Title.set("custom_fonts/font", setup_font(20, "b"))
-	$Num.set("custom_fonts/font", setup_font(18, "b"))
-	$Hospital.set("custom_fonts/font", setup_font(18, "b"))
-	$PoliceStation.set("custom_fonts/font", setup_font(18, "b"))
-	$DateTime.set("custom_fonts/font", setup_font(18, "b"))
-	$Subtitle1.set("custom_fonts/font", setup_font(20, "b"))
-	$Observe/Title.set("custom_fonts/font", setup_font(18, "b"))
-	$LabTest/Title.set("custom_fonts/font", setup_font(18, "b"))
-	$Opinion/Title.set("custom_fonts/font", setup_font(18, "b"))
 	
 	var f = File.new()
 	f.open("res://src/mail/autopsy.json", File.READ)
@@ -61,19 +50,19 @@ func _ready() -> void:
 		for j in i["observe"]:
 			var a = Label.new()
 			a.text = "- " + j
-			a.set("custom_fonts/font", setup_font(18, "r"))
+			a.set("custom_fonts/font", setup_font(20, "r"))
 			$Observe.add_child(a)
 			
 		for j in i["labTest"]:
 			var a = Label.new()
 			a.text = "- " + j
-			a.set("custom_fonts/font", setup_font(18, "r"))
+			a.set("custom_fonts/font", setup_font(20, "r"))
 			$LabTest.add_child(a)
 			
 		for j in i["opinion"]:
 			var a = Label.new()
 			a.text = "- " + j
-			a.set("custom_fonts/font", setup_font(18, "r"))
+			a.set("custom_fonts/font", setup_font(20, "r"))
 			$Opinion.add_child(a)
 
 

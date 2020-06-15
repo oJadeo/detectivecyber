@@ -9,6 +9,7 @@ var show_drag = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"Drag&Drop".hide()
 	$work.add_child(computer)
 	pass # Replace with function body.
 
