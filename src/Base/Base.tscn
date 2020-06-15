@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Base/Base.gd" type="Script" id=1]
+[ext_resource path="res://res/bg/black.jpeg" type="Texture" id=2]
+[ext_resource path="res://src/Base/Drag_Drop_Button.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 554, 298 )
+
+[node name="Panel" type="Panel"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="work" type="Panel" parent="."]
+margin_right = 874.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drag&Drop" type="Panel" parent="."]
+margin_left = 760.0
+margin_top = 239.0
+margin_right = 1024.0
+margin_bottom = 559.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 984.0
+margin_top = 561.0
+margin_right = 1024.0
+margin_bottom = 601.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

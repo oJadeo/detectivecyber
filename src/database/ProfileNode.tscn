@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/database/ProfileNode.gd" type="Script" id=1]
+[ext_resource path="res://res/pic/non-profile.png" type="Texture" id=2]
+[ext_resource path="res://res/font/THSarabunNew Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://res/font/THSarabunNew.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="ProfileNode" type="PanelContainer"]
+margin_right = 568.0
+margin_bottom = 386.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfileContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 561.0
+margin_bottom = 379.0
+
+[node name="Title" type="Label" parent="ProfileContainer"]
+margin_right = 554.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 1 )
+text = "Profile"
+align = 1
+valign = 1
+
+[node name="Head" type="HBoxContainer" parent="ProfileContainer"]
+margin_top = 67.0
+margin_right = 554.0
+margin_bottom = 279.0
+rect_min_size = Vector2( 0, 150 )
+
+[node name="Data" type="VBoxContainer" parent="ProfileContainer/Head"]
+margin_right = 400.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 400, 0 )
+theme = SubResource( 3 )
+
+[node name="Gender" type="Label" parent="ProfileContainer/Head/Data"]
+margin_right = 400.0
+margin_bottom = 32.0
+text = "Gender:"
+
+[node name="Age" type="Label" parent="ProfileContainer/Head/Data"]
+margin_top = 36.0
+margin_right = 400.0
+margin_bottom = 68.0
+text = "Age: "
+
+[node name="Weight" type="Label" parent="ProfileContainer/Head/Data"]
+margin_top = 72.0
+margin_right = 400.0
+margin_bottom = 104.0
+text = "Weight: "
+
+[node name="Height" type="Label" parent="ProfileContainer/Head/Data"]
+margin_top = 108.0
+margin_right = 400.0
+margin_bottom = 140.0
+text = "Height: "
+
+[node name="Occupation" type="Label" parent="ProfileContainer/Head/Data"]
+margin_top = 144.0
+margin_right = 400.0
+margin_bottom = 176.0
+text = "Occupation: "
+
+[node name="Telephone" type="Label" parent="ProfileContainer/Head/Data"]
+margin_top = 180.0
+margin_right = 400.0
+margin_bottom = 212.0
+text = "Tel."
+
+[node name="Picture" type="TextureRect" parent="ProfileContainer/Head"]
+margin_left = 404.0
+margin_right = 554.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 150, 0 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="CrimeHistory" type="VBoxContainer" parent="ProfileContainer"]
+margin_top = 283.0
+margin_right = 554.0
+margin_bottom = 315.0
+theme = SubResource( 3 )
+
+[node name="Title" type="Label" parent="ProfileContainer/CrimeHistory"]
+margin_right = 554.0
+margin_bottom = 32.0
+text = "Crime History"
