@@ -21,3 +21,10 @@ func _on_Mail_Button_taskbar_add(task_app, task_icon_path, task_name):
 	mail_task.setup_taskbar(task_app, task_icon_path, task_name)
 	add_child(mail_task)
 	pass # Replace with function body.
+
+
+func _on_Message_button_taskbar_add(task_app, task_icon_path, task_name):
+	var message_task = load("res://src/Base/TaskbarNode.tscn").instance()
+	message_task.setup_taskbar(task_app, task_icon_path, task_name)
+	add_child(message_task)
+	pass # Replace with function body.
