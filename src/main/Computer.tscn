@@ -84,3 +84,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="taskbar_add" from="Desktop/DesktopContainer/Mail_Button" to="Taskbar/TaskbarContainer" method="_on_Mail_Button_taskbar_add"]
+[connection signal="taskbar_add" from="Desktop/DesktopContainer/Message_button" to="Taskbar/TaskbarContainer" method="_on_Message_button_taskbar_add"]
