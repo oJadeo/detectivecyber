@@ -14,16 +14,19 @@ __meta__ = {
 [node name="Title" type="Label" parent="."]
 margin_right = 600.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Sender" type="Label" parent="."]
 margin_top = 18.0
 margin_right = 600.0
 margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Context" type="Label" parent="."]
 margin_top = 36.0
 margin_right = 600.0
 margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="FileAttach" type="HBoxContainer" parent="."]
 margin_top = 54.0
