@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ScrollContainer",
-"class": "Inbox",
-"language": "GDScript",
-"path": "res://src/mail/Inbox.gd"
-}, {
 "base": "PanelContainer",
 "class": "MailApp",
 "language": "GDScript",
@@ -35,7 +30,6 @@ _global_script_classes=[ {
 "path": "res://src/evidence/TextEvidence.gd"
 } ]
 _global_script_class_icons={
-"Inbox": "",
 "MailApp": "",
 "Profile": "",
 "ProfileNode": "",

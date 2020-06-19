@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://res/font/THSarabunNew Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Base/AppControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/mail/MailAppUse.gd" type="Script" id=3]
+[ext_resource path="res://src/mail/InboxLabel.gd" type="Script" id=4]
 [ext_resource path="res://src/mail/MailApp.gd" type="Script" id=5]
-[ext_resource path="res://res/bg/mountain_bg.jpg" type="Texture" id=6]
+[ext_resource path="res://src/mail/OutboxLabel.gd" type="Script" id=6]
+[ext_resource path="res://src/mail/App.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
@@ -21,8 +23,14 @@ border_color = Color( 0, 0, 0, 1 )
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 1, 1, 1 )
 
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.188235, 0.47451, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0235294, 0.368627, 0.439216, 1 )
+
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0.658824, 1, 1 )
+bg_color = Color( 0.0352941, 0.596078, 0.709804, 1 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -30,8 +38,17 @@ outline_color = Color( 0.513726, 0.513726, 0.513726, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.188235, 0.533333, 0.498039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0235294, 0.439216, 0.4, 1 )
+
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0.811765, 1, 1 )
+bg_color = Color( 0.0392157, 0.74902, 0.678431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
 
 [node name="MailApp" type="PanelContainer"]
 margin_right = 1024.0
@@ -76,32 +93,34 @@ margin_bottom = 140.0
 rect_min_size = Vector2( 200, 0 )
 custom_constants/separation = 0
 
-[node name="InboxLabel" type="Label" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
+[node name="InboxLabel" type="Button" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
 margin_right = 200.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 10 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Inbox"
-align = 1
-valign = 1
+script = ExtResource( 4 )
 
-[node name="OuboxLabel" type="Label" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
+[node name="OutboxLabel" type="Button" parent="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer"]
 margin_top = 70.0
 margin_right = 200.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 0, 70 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = SubResource( 6 )
 custom_fonts/font = SubResource( 5 )
 text = "Outbox"
-align = 1
-valign = 1
+script = ExtResource( 6 )
 
-[node name="BackgroundMail" type="TextureRect" parent="MailAppContainer/MailAppUse/MailAppUseContainer"]
+[node name="App" type="PanelContainer" parent="MailAppContainer/MailAppUse/MailAppUseContainer"]
 margin_left = 212.0
 margin_right = 1022.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 600, 0 )
-texture = ExtResource( 6 )
-expand = true
+custom_styles/panel = SubResource( 7 )
+script = ExtResource( 7 )
+[connection signal="pressed" from="MailAppContainer/MailAppUse/MailAppUseContainer/Tab/TabContainer/InboxLabel" to="MailAppContainer/MailAppUse/MailAppUseContainer/App" method="_on_InboxLabel_pressed"]
