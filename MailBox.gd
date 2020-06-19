@@ -12,6 +12,7 @@ func setup(title, context, sender, file_attach : Dictionary):
 	for i in file_attach.keys():
 		var k = Label.new()
 		k.text = i
+		k
 		$FileAttach.add_child(k)
 
 func _ready():
