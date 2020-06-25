@@ -1,6 +1,6 @@
-extends Button
+extends TextureButton
 
-var program = load("res://src/MESSAGE/messagescene.tscn").instance()
+signal taskbar_add(task_app, task_icon_path, task_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +14,8 @@ func _pressed() -> void:
 	if($dbClicker.is_stopped()):
 		$dbClicker.start()
 	else:
-		get_parent().get_parent().add_child(program)
-		get_parent().get_parent().move_child(program,1)
+		var k = load("res://src/MESSAGE/messagescene.tscn").instance()
+		k.rect_size = get_parent().rect_size
+		get_parent().get_parent().add_child(k)
+		get_parent().get_parent().move_child(k,1)
+		emit_signal("taskbar_add", k, "res://res/icon/message.png", "Message")
