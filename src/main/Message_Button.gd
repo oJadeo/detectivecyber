@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 signal taskbar_add(task_app, task_icon_path, task_name)
 
